@@ -1,3 +1,9 @@
+# Xenon Flow Ai
+
+**Author:** Xenon  
+**Email:** xannrlcs@gmail.com  
+**Website:** https://xenon.dev
+
 # 🤖 Xenon Flow AI
 
 AI-powered productivity dan workflow management system untuk tim modern
@@ -17,7 +23,7 @@ AI-powered productivity dan workflow management system untuk tim modern
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/xenon231tech/xenon-flow-ai.git
+   git clone https://xenon.dev/xenon-flow-ai.git
    cd xenon-flow-ai
    ```
 
@@ -81,7 +87,7 @@ The website automatically fetches and displays:
 ### GitHub Pages
 1. Go to repository Settings → Pages
 2. Select "main" branch as source
-3. Website will be live at: `https://xenon231tech.github.io/xenon-flow-ai`
+3. Website will be live at: `https://xenon.dev/xenon-flow-ai`
 
 ### Vercel
 1. Connect repository to Vercel
@@ -119,7 +125,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📧 Contact
 
-- GitHub: [@xenon231tech](https://github.com/xenon231tech)
+- GitHub: [@xenon231tech](https://xenon.dev)
 - Twitter: [@xenon_d62](https://twitter.com/xenon_d62)
 - Email: contact@xenon.dev
 
