@@ -3,132 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-powered workflow automation and task management system">
-    <meta name="keywords" content="ai, workflow, automation, tasks, productivity">
-    <meta name="author" content="xenon231tech">
-    <meta property="og:title" content="Xenon Flow AI">
-    <meta property="og:description" content="AI-powered workflow automation and task management system">
-    <meta property="og:type" content="website">
-    <title>Xenon Flow AI - Xenon Project</title>
+    <title>Workflow Automation</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --primary-color: #8b5cf6;
-            --primary-rgb: 139, 92, 246;
+        .app-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .app-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        
+        .input-section, .controls, .search-box, .task-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .stat-card {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .stat-card h2 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+        
+        .card {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            cursor: pointer;
+            border-radius: 5px;
+            user-select: none;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .nfts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .nft-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+        }
+        
+        .expense-item, .task-item, .crypto-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #f0f0f0;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        
+        .playlist {
+            margin-top: 20px;
+        }
+        
+        .block {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .block:hover {
+            background: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <header class="navbar">
-        <div class="container">
-            <div class="navbar-brand">
-                <span class="project-icon">🤖</span>
-                <h1>Xenon Flow AI</h1>
+    <div class="app-container">
+            <h1>🤖 Workflow Automation</h1>
+            <div class="workflow">
+                <div class="task-input">
+                    <input type="text" id="task-name" placeholder="Task name">
+                    <input type="text" id="task-desc" placeholder="Description">
+                    <button onclick="addTask()">Add Task</button>
+                </div>
+                <div class="tasks-list" id="tasks"></div>
+                <div class="stats">
+                    <span>Total: <strong id="total-tasks">0</strong></span>
+                    <span>Completed: <strong id="completed-tasks">0</strong></span>
+                </div>
             </div>
-            <nav class="navbar-menu">
-                <a href="#features">Features</a>
-                <a href="#about">About</a>
-                <a href="https://github.com/xenon231tech/xenon-flow-ai" target="_blank">GitHub</a>
-            </nav>
         </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Xenon Flow AI</h1>
-                    <p class="hero-subtitle">AI-powered workflow automation and task management system</p>
-                    <div class="hero-buttons">
-                        <a href="https://github.com/xenon231tech/xenon-flow-ai" class="btn btn-primary">View on GitHub</a>
-                        <a href="https://github.com/xenon231tech/xenon-flow-ai/issues" class="btn btn-secondary">Report Issue</a>
-                    </div>
-                </div>
-                <div class="hero-icon">🤖</div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features" id="features">
-            <div class="container">
-                <h2>Key Features</h2>
-                <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>Workflow automation</h3>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>Task scheduling</h3>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>AI-powered insights</h3>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>Process optimization</h3>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>Performance analytics</h3>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <h2>About This Project</h2>
-                <p>AI-powered workflow automation and task management system</p>
-                <p>This project is part of the Xenon ecosystem - a collection of innovative applications and tools.</p>
-                <div class="project-stats">
-                    <div class="stat">
-                        <span class="stat-value" id="stars">-</span>
-                        <span class="stat-label">Stars</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value" id="forks">-</span>
-                        <span class="stat-label">Forks</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value" id="issues">-</span>
-                        <span class="stat-label">Issues</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta">
-            <div class="container">
-                <h2>Ready to Get Started?</h2>
-                <p>Explore the project on GitHub and start using Xenon Flow AI today!</p>
-                <a href="https://github.com/xenon231tech/xenon-flow-ai" class="btn btn-primary btn-large">Go to GitHub</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Xenon Projects. All rights reserved.</p>
-            <p>Created by <a href="https://github.com/xenon231tech">xenon231tech</a></p>
-        </div>
-    </footer>
-
     <script src="script.js"></script>
-    <script>
-        // Fetch GitHub stats
-        fetch('https://api.github.com/repos/xenon231tech/xenon-flow-ai')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('stars').textContent = data.stargazers_count || 0;
-                document.getElementById('forks').textContent = data.forks_count || 0;
-                document.getElementById('issues').textContent = data.open_issues_count || 0;
-            })
-            .catch(error => console.log('Stats unavailable'));
-    </script>
 </body>
 </html>
